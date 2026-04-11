@@ -1,6 +1,3 @@
-Here is your **README.md in pure code format**, ready to copy and paste:
-
-```markdown
 # ReportApp – Money Management App
 
 ReportApp is a Flutter-based money management application designed to help users track income and expenses with a modern fintech-style interface. The app automatically calculates total balance, visualizes financial data, and provides a simple and efficient way to manage daily finances.
