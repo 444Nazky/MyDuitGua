@@ -4,6 +4,7 @@ import 'statistics_screen.dart';
 import 'history_screen.dart';
 import '../widgets/add_transaction_sheet.dart';
 import '../theme/app_theme.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const StatisticsScreen(),
     const SizedBox(), // Placeholder for the Add button
     const HistoryScreen(),
-    const Center(child: Text('Profile Page')), // Optional profile page
+    const ProfileScreen(),
   ];
 
   void _onTabTapped(int index) {

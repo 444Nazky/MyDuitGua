@@ -41,7 +41,7 @@ class StatisticsScreen extends StatelessWidget {
                       child: Text('Not enough data to display chart.'),
                     ),
                   )
-                else
+                else ...[
                   Container(
                     height: 250,
                     padding: const EdgeInsets.all(16),
@@ -60,38 +60,29 @@ class StatisticsScreen extends StatelessWidget {
                         sectionsSpace: 2,
                         centerSpaceRadius: 60,
                         sections: [
-                          PieChartSectionData(
-                            color: AppTheme.incomeColor,
-                            value: totalIncome,
-                            title: 'Income',
-                            radius: 30,
-                            titleStyle: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          if (totalIncome > 0)
+                            PieChartSectionData(
+                              color: AppTheme.incomeColor,
+                              value: totalIncome,
+                              showTitle: false,
+                              radius: 40,
                             ),
-                          ),
-                          PieChartSectionData(
-                            color: AppTheme.expenseColor,
-                            value: totalExpense,
-                            title: 'Expense',
-                            radius: 30,
-                            titleStyle: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          if (totalExpense > 0)
+                            PieChartSectionData(
+                              color: AppTheme.expenseColor,
+                              value: totalExpense,
+                              showTitle: false,
+                              radius: 40,
                             ),
-                          ),
                         ],
                       ),
                     ),
                   ),
                   const SizedBox(height: 32),
-                  if (hasData) ...[
-                    _buildLegendMode(totalIncome, totalExpense),
-                    const SizedBox(height: 32),
-                    _buildBarChart(totalIncome, totalExpense),
-                  ]
+                  _buildLegendMode(totalIncome, totalExpense),
+                  const SizedBox(height: 32),
+                  _buildBarChart(totalIncome, totalExpense),
+                ]
               ],
             ),
           );
@@ -103,7 +94,7 @@ class StatisticsScreen extends StatelessWidget {
   Widget _buildLegendMode(double income, double expense) {
     return Card(
       elevation: 0,
-       shape: RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: const BorderSide(color: Color(0xFFF0F0F0), width: 1),
       ),
@@ -203,7 +194,7 @@ class StatisticsScreen extends StatelessWidget {
                     ),
                   ),
                   leftTitles: const AxisTitles(
-                    sideTitles: SideTitles(showTitles: false), // Hide left titles
+                    sideTitles: SideTitles(showTitles: false), // Hide left titles for clean UI
                   ),
                   topTitles: const AxisTitles(
                     sideTitles: SideTitles(showTitles: false),
