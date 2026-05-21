@@ -178,3 +178,5 @@ This project is available under the MIT License.
 - Enhanced transaction tracking system
 ## 🦈 Pull Shark Feature 2
 - Improved user dashboard UI
+## 🦈 Pull Shark Feature 3
+- Added advanced analytics features
