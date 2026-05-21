@@ -176,3 +176,5 @@ This project is available under the MIT License.
 - Second pair programming session
 ## 🦈 Pull Shark Feature 1
 - Enhanced transaction tracking system
+## 🦈 Pull Shark Feature 2
+- Improved user dashboard UI
